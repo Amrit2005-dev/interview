@@ -1,0 +1,13 @@
+{
+  "appId": "com.interviewcopilot.desktop",
+  "productName": "Interview Copilot",
+  "directories": { "output": "release" },
+  "files": ["electron/**/*"],
+  "win": {
+    "target": "portable",
+    "artifactName": "InterviewCopilot.exe"
+  },
+  "portable": {
+    "artifactName": "InterviewCopilot.exe"
+  }
+}

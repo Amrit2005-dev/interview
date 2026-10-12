@@ -1,0 +1,40 @@
+{
+  "name": "interview-copilot",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "electron/main.cjs",
+  "description": "Free, Cloudflare-native real-time AI interview assistant (Parakeet-style)",
+  "scripts": {
+    "dev:web": "vite",
+    "build": "vite build",
+    "dev": "npm run build && wrangler pages dev dist",
+    "deploy": "npm run build && wrangler pages deploy",
+    "electron": "electron electron/main.cjs",
+    "electron:build": "electron-builder --win portable --config electron-builder.json",
+    "electron:package": "electron-packager . InterviewCopilot --platform=win32 --arch=x64 --out=release --overwrite --prune=false --ignore=node_modules --ignore=src --ignore=dist --ignore=functions --ignore=public --ignore=release --ignore=scratchpad"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.2.0",
+    "mammoth": "^1.12.0",
+    "pdfjs-dist": "^6.1.200",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tesseract.js": "^7.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240909.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3",
+    "electron-packager": "^17.1.2",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2",
+    "wrangler": "^3.78.0"
+  },
+  "allowScripts": {
+    "electron@31.7.7": true
+  }
+}

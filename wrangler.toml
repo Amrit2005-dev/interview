@@ -1,0 +1,7 @@
+name = "interview-copilot"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "dist"
+
+# Free Workers AI binding — no API key, billed against the free daily allowance.
+[ai]
+binding = "AI"
